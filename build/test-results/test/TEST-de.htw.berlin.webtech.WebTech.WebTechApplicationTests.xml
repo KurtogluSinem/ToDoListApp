@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.htw.berlin.webtech.WebTech.WebTechApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-14T16:15:28" hostname="MBP-von-Sinem" time="0.427">
+  <properties/>
+  <testcase name="contextLoads()" classname="de.htw.berlin.webtech.WebTech.WebTechApplicationTests" time="0.427"/>
+  <system-out><![CDATA[18:15:26.160 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [WebTechApplicationTests]: using SpringBootContextLoader
+18:15:26.170 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [de.htw.berlin.webtech.WebTech.WebTechApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:15:26.171 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.webtech.WebTech.WebTechApplicationTests]: WebTechApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:15:26.210 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [WebTechApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+18:15:26.351 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [/Users/krtgls/ToDoListApp/build/classes/java/main/de/htw/berlin/webtech/WebTech/WebTechApplication.class]
+18:15:26.357 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.webtech.WebTech.WebTechApplication for test class de.htw.berlin.webtech.WebTech.WebTechApplicationTests
+18:15:26.443 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils -- Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+18:15:26.445 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils -- Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+18:15:26.448 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [WebTechApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+18:15:26.449 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [WebTechApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-14T18:15:26.914+02:00  INFO 22796 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : Starting WebTechApplicationTests using Java 17.0.2 with PID 22796 (started by krtgls in /Users/krtgls/ToDoListApp)
+2023-05-14T18:15:26.917+02:00  INFO 22796 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-05-14T18:15:28.813+02:00  INFO 22796 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : Started WebTechApplicationTests in 2.303 seconds (process running for 3.797)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
