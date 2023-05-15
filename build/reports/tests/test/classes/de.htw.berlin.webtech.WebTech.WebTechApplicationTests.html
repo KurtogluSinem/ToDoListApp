@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.295s</div>
+<div class="counter">0.454s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.295s</td>
+<td class="success">0.454s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,14 +87,14 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>13:32:47.033 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [WebTechApplicationTests]: using SpringBootContextLoader
-13:32:47.049 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [de.htw.berlin.webtech.WebTech.WebTechApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-13:32:47.050 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.webtech.WebTech.WebTechApplicationTests]: WebTechApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-13:32:47.082 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [WebTechApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
-13:32:47.201 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [/Users/krtgls/ToDoListApp/build/classes/java/main/de/htw/berlin/webtech/WebTech/WebTechApplication.class]
-13:32:47.205 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.webtech.WebTech.WebTechApplication for test class de.htw.berlin.webtech.WebTech.WebTechApplicationTests
-13:32:47.304 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [WebTechApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-13:32:47.305 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [WebTechApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+<pre>20:38:42.131 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [WebTechApplicationTests]: using SpringBootContextLoader
+20:38:42.139 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [de.htw.berlin.webtech.WebTech.WebTechApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:38:42.141 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [de.htw.berlin.webtech.WebTech.WebTechApplicationTests]: WebTechApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:38:42.177 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [WebTechApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+20:38:42.331 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [C:\Users\Fatma\IdeaProjects\ToDoListApp\build\classes\java\main\de\htw\berlin\webtech\WebTech\WebTechApplication.class]
+20:38:42.338 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration de.htw.berlin.webtech.WebTech.WebTechApplication for test class de.htw.berlin.webtech.WebTech.WebTechApplicationTests
+20:38:42.598 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [WebTechApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+20:38:42.600 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [WebTechApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -104,20 +104,20 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.6)
 
-2023-05-15T13:32:47.741+02:00  INFO 52671 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : Starting WebTechApplicationTests using Java 17.0.2 with PID 52671 (started by krtgls in /Users/krtgls/ToDoListApp)
-2023-05-15T13:32:47.746+02:00  INFO 52671 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-05-15T13:32:48.922+02:00  INFO 52671 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-15T13:32:48.962+02:00  INFO 52671 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
-2023-05-15T13:32:49.811+02:00  INFO 52671 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-15T13:32:49.856+02:00  INFO 52671 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2023-05-15T13:32:50.116+02:00  INFO 52671 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-15T13:32:50.315+02:00  INFO 52671 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:994cc8d5-2f67-4815-9b75-ceb1857e4004 user=SA
-2023-05-15T13:32:50.320+02:00  INFO 52671 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-15T13:32:50.341+02:00  INFO 52671 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-15T13:32:50.605+02:00  INFO 52671 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-15T13:32:50.616+02:00  INFO 52671 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-15T13:32:51.328+02:00  INFO 52671 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/db-console'. Database available at 'jdbc:h2:mem:994cc8d5-2f67-4815-9b75-ceb1857e4004'
-2023-05-15T13:32:51.406+02:00  INFO 52671 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : Started WebTechApplicationTests in 4.046 seconds (process running for 5.546)
+2023-05-15T20:38:43.261+02:00  INFO 11216 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : Starting WebTechApplicationTests using Java 17.0.7 with PID 11216 (started by Fatma in C:\Users\Fatma\IdeaProjects\ToDoListApp)
+2023-05-15T20:38:43.263+02:00  INFO 11216 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-05-15T20:38:44.197+02:00  INFO 11216 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-15T20:38:44.235+02:00  INFO 11216 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JPA repository interfaces.
+2023-05-15T20:38:44.847+02:00  INFO 11216 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-15T20:38:45.112+02:00  INFO 11216 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:f552fe6a-b5db-4abb-85cd-f18e8afcfc5d user=SA
+2023-05-15T20:38:45.114+02:00  INFO 11216 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-15T20:38:45.224+02:00  INFO 11216 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-15T20:38:45.326+02:00  INFO 11216 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-15T20:38:45.822+02:00  INFO 11216 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-15T20:38:47.056+02:00  INFO 11216 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-15T20:38:47.069+02:00  INFO 11216 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-15T20:38:47.316+02:00  WARN 11216 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-15T20:38:48.141+02:00  INFO 11216 --- [    Test worker] d.h.b.w.WebTech.WebTechApplicationTests  : Started WebTechApplicationTests in 5.41 seconds (process running for 7.327)
 </pre>
 </span>
 </div>
@@ -129,7 +129,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 15.05.2023, 13:32:51</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 15.05.2023, 20:38:48</p>
 </div>
 </div>
 </body>
