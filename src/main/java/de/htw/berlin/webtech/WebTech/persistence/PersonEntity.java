@@ -2,7 +2,6 @@ package de.htw.berlin.webtech.WebTech.persistence;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 
     @Entity(name = "persons")
     public class PersonEntity {
