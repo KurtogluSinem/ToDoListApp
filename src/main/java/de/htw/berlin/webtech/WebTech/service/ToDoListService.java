@@ -4,6 +4,7 @@ import de.htw.berlin.webtech.WebTech.persistence.ToDoListEntity;
 import de.htw.berlin.webtech.WebTech.persistence.ToDoListRepository;
 import de.htw.berlin.webtech.WebTech.web.api.ToDoList;
 import de.htw.berlin.webtech.WebTech.web.api.ToDoListManipulationRequest;
+import org.jboss.logging.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -58,9 +59,6 @@ import java.util.stream.Collectors;
 
 
         public boolean deleteById(Long Id){
-            if (!toDoListRepository.existsById(Id)){
-                return false;
-            }
 
             toDoListRepository.deleteById(Id);
             return true;
