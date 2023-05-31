@@ -58,9 +58,6 @@ import java.util.stream.Collectors;
 
 
         public boolean deleteById(Long Id){
-            if (!toDoListRepository.existsById(Id)){
-                return false;
-            }
 
             toDoListRepository.deleteById(Id);
             return true;

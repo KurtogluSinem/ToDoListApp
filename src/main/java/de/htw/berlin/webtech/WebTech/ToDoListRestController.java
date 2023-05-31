@@ -20,31 +20,32 @@ public class ToDoListRestController {
     }
 
     @GetMapping(path = "/api/v1/todolist")
-    public ResponseEntity<List<ToDoList>> fetchToDoList(){
+    public ResponseEntity<List<ToDoList>> fetchToDoList() {
         return ResponseEntity.ok(toDoListService.findAll());
     }
 
     @GetMapping(path = "/api/v1/todolist/{id}")
-    public ResponseEntity<ToDoList> fetchToDoListById(@PathVariable Long id){
+    public ResponseEntity<ToDoList> fetchToDoListById(@PathVariable Long id) {
         var toDoList = toDoListService.findById(id);
-        return toDoList != null? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
+        return toDoList != null ? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
     }
 
     @PostMapping(path = "/api/v1/todolist")
     public ResponseEntity<Void> createToDoList(@RequestBody ToDoListManipulationRequest request) throws URISyntaxException {
-       var toDoList = toDoListService.create(request);
-       URI uri = new URI("/api/v1/todolist" + toDoList.getId());
-       return ResponseEntity.created(uri).build();
+        var toDoList = toDoListService.create(request);
+        URI uri = new URI("/api/v1/todolist" + toDoList.getId());
+        return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(path = "/api/v1/todolist/{id}")
-    public ResponseEntity<ToDoList> updateToDoList(@PathVariable Long id, @RequestBody ToDoListManipulationRequest request){
-       var toDoList = toDoListService.update(id, request);
-       return toDoList != null? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
+    public ResponseEntity<ToDoList> updateToDoList(@PathVariable Long id, @RequestBody ToDoListManipulationRequest request) {
+        var toDoList = toDoListService.update(id, request);
+        return toDoList != null ? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
     }
+
     @DeleteMapping(path = "/api/v1/todolist/{id}")
-    public ResponseEntity<Void> deleteToDoList(@PathVariable Long id){
+    public ResponseEntity<Void> deleteToDoList(@PathVariable Long id) {
         boolean successful = toDoListService.deleteById(id);
-        return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+        return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 }
