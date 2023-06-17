@@ -9,13 +9,15 @@ public class ToDoList {
         private String aufgabe;
         private boolean erledigt;
         private Date datum;
+        private String priorität;
 
-    public ToDoList(long id, String überschrift, String aufgabe, Date datum, boolean erledigt) {
+    public ToDoList(long id, String überschrift, String aufgabe, Date datum, boolean erledigt, String priorität) {
         this.id = id;
         this.überschrift = überschrift;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
         this.datum = datum;
+        this.priorität= priorität;
     }
 
     public long getId() {
@@ -42,19 +44,28 @@ public class ToDoList {
         this.aufgabe = aufgabe;
     }
 
-    public boolean isErledigt() {
+    public boolean getErledigt() {
         return erledigt;
     }
 
     public void setErledigt(boolean erledigt) {
         this.erledigt = erledigt;
     }
+
     public Date getDatum() {
         return datum;
     }
 
     public void setDatum(Date datum) {
         this.datum = datum;
+    }
+
+    public String getPriorität() {
+        return priorität;
+    }
+
+    public void setPriorität(String priorität) {
+        this.priorität = priorität;
     }
 }
 

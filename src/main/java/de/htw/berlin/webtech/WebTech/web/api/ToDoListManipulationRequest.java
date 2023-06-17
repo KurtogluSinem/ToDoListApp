@@ -9,13 +9,15 @@ public class ToDoListManipulationRequest {
     private String aufgabe;
     private boolean erledigt;
     private Date datum;
+    private String priorität;
 
-    public ToDoListManipulationRequest(long id, String überschrift, String aufgabe, Date datum, boolean erledigt) {
+    public ToDoListManipulationRequest(long id, String überschrift, String aufgabe, Date datum, boolean erledigt, String priorität) {
         this.id = id;
         this.überschrift = überschrift;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
         this.datum = datum;
+        this.priorität = priorität;
     }
 
     public long getId() {
@@ -55,5 +57,13 @@ public class ToDoListManipulationRequest {
 
     public void setDatum(Date datum) {
         this.datum = datum;
+    }
+
+    public String getPriorität() {
+        return priorität;
+    }
+
+    public void setPriorität(String priorität) {
+        this.priorität = priorität;
     }
 }

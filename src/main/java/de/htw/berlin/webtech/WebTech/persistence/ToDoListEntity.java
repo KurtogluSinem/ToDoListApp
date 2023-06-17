@@ -24,12 +24,16 @@ public class ToDoListEntity {
     @Column(name = "datum")
     private Date datum;
 
+    @Column (name= "priorität")
+    private String priorität;
 
-    public ToDoListEntity(String überschrift, String aufgabe, Boolean erledigt, Date datum) {
+
+    public ToDoListEntity(String überschrift, String aufgabe, Boolean erledigt, Date datum, String priorität) {
         this.überschrift = überschrift;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
         this.datum = datum;
+        this.priorität= priorität;
     }
 
     public ToDoListEntity() {
@@ -71,5 +75,12 @@ public class ToDoListEntity {
 
     public void setDatum(Date datum) {
         this.datum = datum;
+    }
+
+    public String getPriorität() {
+        return priorität;
+    }
+
+    public void setPriorität(String priorität) { this.priorität = priorität;
     }
 }

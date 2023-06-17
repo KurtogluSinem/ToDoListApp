@@ -36,7 +36,9 @@ import java.util.stream.Collectors;
             var toDoListEntity = new ToDoListEntity(request.getÜberschrift(),
                     request.getAufgabe(),
                     request.isErledigt(),
-                    request.getDatum());
+                    request.getDatum(),
+                    request.getPriorität());
+
             toDoListEntity = toDoListRepository.save(toDoListEntity);
             return transformEntity(toDoListEntity);
         }
@@ -52,6 +54,7 @@ import java.util.stream.Collectors;
             toDoListEntity.setAufgabe(request.getAufgabe());
             toDoListEntity.setErledigt(request.isErledigt());
             toDoListEntity.setDatum(request.getDatum());
+            toDoListEntity.setPriorität(request.getPriorität());
 
             toDoListEntity = toDoListRepository.save(toDoListEntity);
             return transformEntity(toDoListEntity);
@@ -71,7 +74,8 @@ import java.util.stream.Collectors;
                                 toDoListEntity.getÜberschrift(),
                                 toDoListEntity.getAufgabe(),
                                 toDoListEntity.getDatum(),
-                                toDoListEntity.getErledigt());
+                                toDoListEntity.getErledigt(),
+                                toDoListEntity.getPriorität());
 
         }
     }
