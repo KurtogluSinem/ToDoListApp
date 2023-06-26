@@ -33,12 +33,11 @@ import java.util.stream.Collectors;
         }
 
         public ToDoList create(ToDoListManipulationRequest request) {
-            var toDoListEntity = new ToDoListEntity(request.getÜberschrift(),
+            var toDoListEntity = new ToDoListEntity(request.getAufgabentitel(),
                     request.getAufgabe(),
                     request.isErledigt(),
                     request.getDatum(),
-                    request.getPriorität());
-
+                    request.isDringlichkeit());
             toDoListEntity = toDoListRepository.save(toDoListEntity);
             return transformEntity(toDoListEntity);
         }
@@ -50,15 +49,35 @@ import java.util.stream.Collectors;
             }
 
             var toDoListEntity = toDoListEntityOptional.get();
-            toDoListEntity.setÜberschrift(request.getÜberschrift());
+            toDoListEntity.setAufgabentitel(request.getAufgabentitel());
             toDoListEntity.setAufgabe(request.getAufgabe());
             toDoListEntity.setErledigt(request.isErledigt());
             toDoListEntity.setDatum(request.getDatum());
-            toDoListEntity.setPriorität(request.getPriorität());
+            toDoListEntity.setDringlichkeit(request.isDringlichkeit());
 
             toDoListEntity = toDoListRepository.save(toDoListEntity);
             return transformEntity(toDoListEntity);
         }
+
+        public ToDoList isFinished(Long id, ToDoListManipulationRequest request){
+            var toDoListEntityOptional = toDoListRepository.findById(id);
+            if (toDoListEntityOptional.isEmpty()){
+                return null;
+            }
+
+            var toDoListEntity = toDoListEntityOptional.get();
+            if(toDoListEntityOptional.get().getErledigt().equals(true)){
+                toDoListEntity.setErledigt(request.isErledigt());
+
+            }
+            else{
+                toDoListEntity.setErledigt(!request.isErledigt());
+            }
+
+            toDoListEntity = toDoListRepository.save(toDoListEntity);
+            return transformEntity(toDoListEntity);
+        }
+
 
 
         public boolean deleteById(Long Id){
@@ -67,16 +86,25 @@ import java.util.stream.Collectors;
             return true;
         }
 
+        public boolean deleteAll(){
+
+            toDoListRepository.deleteAll();
+            return true;
+        }
+
 
         public ToDoList transformEntity(ToDoListEntity toDoListEntity) {
             return new ToDoList(
                                 toDoListEntity.getId(),
-                                toDoListEntity.getÜberschrift(),
+                                toDoListEntity.getÁufgabentitel(),
                                 toDoListEntity.getAufgabe(),
                                 toDoListEntity.getDatum(),
                                 toDoListEntity.getErledigt(),
-                                toDoListEntity.getPriorität());
+                                toDoListEntity.getDringlichkeit());
 
         }
+
+
     }
+
 

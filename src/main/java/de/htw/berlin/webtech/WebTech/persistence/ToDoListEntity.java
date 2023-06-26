@@ -5,35 +5,38 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity(name = "ToDo-Liste")
-public class ToDoListEntity {
+public class  ToDoListEntity {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "Id")
     private long id;
-    @Column(name = "überschrift")
-    private String überschrift;
+    @Column(name = "Aufgabentitel")
+    private String aufgabentitel;
 
-    @Column(name = "aufgabe")
+    @Column(name = "Aufgabe")
     private String aufgabe;
 
-    @Column(name = "erledigt")
+    @Column(name = "Erledigt")
     private Boolean erledigt;
 
-    @Column(name = "datum")
+    @Column(name = "Datum")
     private Date datum;
 
-    @Column (name= "priorität")
-    private String priorität;
+    @Column(name = "Dringlichkeit")
+    private boolean dringlichkeit;
 
-
-    public ToDoListEntity(String überschrift, String aufgabe, Boolean erledigt, Date datum, String priorität) {
-        this.überschrift = überschrift;
+    public ToDoListEntity(String aufgabentitel, String aufgabe, Boolean erledigt, Date datum, boolean dringlichkeit) {
+        this.aufgabentitel = aufgabentitel;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
         this.datum = datum;
-        this.priorität= priorität;
+        this.dringlichkeit = dringlichkeit;
+    }
+
+    public void setDringlichkeit(boolean dringlichkeit) {
+        this.dringlichkeit = dringlichkeit;
     }
 
     public ToDoListEntity() {
@@ -45,12 +48,12 @@ public class ToDoListEntity {
     }
 
 
-    public String getÜberschrift() {
-        return überschrift;
+    public String getÁufgabentitel() {
+        return aufgabentitel;
     }
 
-    public void setÜberschrift(String überschrift) {
-        this.überschrift = überschrift;
+    public void setAufgabentitel(String aufgabentitel) {
+        this.aufgabentitel = aufgabentitel;
     }
 
     public String getAufgabe() {
@@ -77,10 +80,8 @@ public class ToDoListEntity {
         this.datum = datum;
     }
 
-    public String getPriorität() {
-        return priorität;
-    }
-
-    public void setPriorität(String priorität) { this.priorität = priorität;
+    public boolean getDringlichkeit() {
+        return dringlichkeit;
     }
 }
+
