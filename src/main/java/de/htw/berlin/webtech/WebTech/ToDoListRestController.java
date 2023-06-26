@@ -33,7 +33,7 @@ public class ToDoListRestController {
     @PostMapping(path = "/api/v1/todolist")
     public ResponseEntity<Void> createToDoList(@RequestBody ToDoListManipulationRequest request) throws URISyntaxException {
        var toDoList = toDoListService.create(request);
-       URI uri = new URI("/api/v1/todolist" + toDoList.getId());
+       URI uri = new URI("/api/v1/todolist/" + toDoList.getId());
        return ResponseEntity.created(uri).build();
     }
 

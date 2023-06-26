@@ -48,7 +48,7 @@ public class  ToDoListEntity {
     }
 
 
-    public String getÁufgabentitel() {
+    public String getAufgabentitel() {
         return aufgabentitel;
     }
 

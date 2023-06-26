@@ -96,7 +96,7 @@ import java.util.stream.Collectors;
         public ToDoList transformEntity(ToDoListEntity toDoListEntity) {
             return new ToDoList(
                                 toDoListEntity.getId(),
-                                toDoListEntity.getÁufgabentitel(),
+                                toDoListEntity.getAufgabentitel(),
                                 toDoListEntity.getAufgabe(),
                                 toDoListEntity.getDatum(),
                                 toDoListEntity.getErledigt(),
