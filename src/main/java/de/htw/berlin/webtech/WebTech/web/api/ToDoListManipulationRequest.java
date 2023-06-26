@@ -19,6 +19,7 @@ public class ToDoListManipulationRequest {
         this.datum = datum;
         this.priorität = priorität;
     }
+    public ToDoListManipulationRequest(){}
 
     public long getId() {
         return id;
