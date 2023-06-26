@@ -4,28 +4,30 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
-@Entity(name = "ToDo-Liste")
+@Entity(name = "ToDoListe")
 public class  ToDoListEntity {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private long id;
-    @Column(name = "Aufgabentitel")
+    @Column(name = "aufgabentitel")
     private String aufgabentitel;
 
-    @Column(name = "Aufgabe")
+    @Column(name = "aufgabe")
     private String aufgabe;
 
-    @Column(name = "Erledigt")
-    private Boolean erledigt;
-
-    @Column(name = "Datum")
+    @Column(name = "datum")
     private Date datum;
 
-    @Column(name = "Dringlichkeit")
+    @Column(name = "dringlichkeit")
     private boolean dringlichkeit;
+
+    @Column(name = "erledigt")
+    private Boolean erledigt;
+
+
 
     public ToDoListEntity(String aufgabentitel, String aufgabe, Boolean erledigt, Date datum, boolean dringlichkeit) {
         this.aufgabentitel = aufgabentitel;
@@ -48,7 +50,7 @@ public class  ToDoListEntity {
     }
 
 
-    public String getÁufgabentitel() {
+    public String getAufgabentitel() {
         return aufgabentitel;
     }
 

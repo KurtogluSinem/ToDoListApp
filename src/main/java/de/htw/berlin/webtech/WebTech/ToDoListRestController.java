@@ -30,10 +30,10 @@ public class ToDoListRestController {
         return toDoList != null? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping(path = "/api/v1/todolist")
+    @PostMapping(path = "/api/v1/todolist/")
     public ResponseEntity<Void> createToDoList(@RequestBody ToDoListManipulationRequest request) throws URISyntaxException {
        var toDoList = toDoListService.create(request);
-       URI uri = new URI("/api/v1/todolist" + toDoList.getId());
+       URI uri = new URI("/api/v1/todolist/" + toDoList.getId());
        return ResponseEntity.created(uri).build();
     }
 
