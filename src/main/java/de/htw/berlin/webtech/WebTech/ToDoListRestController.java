@@ -42,9 +42,21 @@ public class ToDoListRestController {
        var toDoList = toDoListService.update(id, request);
        return toDoList != null? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
     }
+
+    @PutMapping(path = "/api/v1/todolist/{id}/erledigt")
+    public ResponseEntity<ToDoList> doneToDos(@PathVariable Long id, @RequestBody ToDoListManipulationRequest request) {
+        var toDoList= toDoListService.isFinished(id, request);
+        return toDoList != null ? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
+    }
     @DeleteMapping(path = "/api/v1/todolist/{id}")
     public ResponseEntity<Void> deleteToDoList(@PathVariable Long id){
         boolean successful = toDoListService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping(path = "/api/v1/todolist/deleteall")
+    public ResponseEntity<Void> deleteAll() {
+        boolean successful = toDoListService.deleteAll();
+        return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 }

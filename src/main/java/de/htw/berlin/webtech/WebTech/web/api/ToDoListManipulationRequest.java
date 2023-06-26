@@ -5,17 +5,19 @@ import java.util.Date;
 public class ToDoListManipulationRequest {
 
     private long id;
-    private String überschrift;
+    private String aufgabentitel;
     private String aufgabe;
     private boolean erledigt;
     private Date datum;
+    private boolean dringlichkeit;
 
-    public ToDoListManipulationRequest(long id, String überschrift, String aufgabe, Date datum, boolean erledigt) {
+    public ToDoListManipulationRequest(long id, String aufgabentitel, String aufgabe, Date datum, boolean erledigt, boolean dringlichkeit) {
         this.id = id;
-        this.überschrift = überschrift;
+        this.aufgabentitel = aufgabentitel;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
         this.datum = datum;
+        this.dringlichkeit = dringlichkeit;
     }
 
     public long getId() {
@@ -26,12 +28,20 @@ public class ToDoListManipulationRequest {
         this.id = id;
     }
 
-    public String getÜberschrift() {
-        return überschrift;
+    public boolean isDringlichkeit() {
+        return dringlichkeit;
     }
 
-    public void setÜberschrift(String überschrift) {
-        this.überschrift = überschrift;
+    public void setDringlichkeit(boolean dringlichkeit) {
+        this.dringlichkeit = dringlichkeit;
+    }
+
+    public String getAufgabentitel() {
+        return aufgabentitel;
+    }
+
+    public void setAufgabentitel(String aufgabentitel) {
+        this.aufgabentitel = aufgabentitel;
     }
 
     public String getAufgabe() {
