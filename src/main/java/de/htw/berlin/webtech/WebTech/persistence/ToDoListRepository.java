@@ -7,6 +7,6 @@ import java.util.List;
 
 @Repository
 public interface ToDoListRepository extends JpaRepository<ToDoListEntity, Long> {
-
+ List<ToDoListEntity> findAllById(long id);
 }
 

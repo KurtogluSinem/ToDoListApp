@@ -9,9 +9,9 @@ public class ToDoList {
         private String aufgabe;
         private boolean erledigt;
         private Date datum;
-        private boolean dringlichkeit;
+        private String dringlichkeit;
 
-    public ToDoList(long id, String aufgabentitel, String aufgabe, Date datum, boolean erledigt, boolean dringlichkeit) {
+    public ToDoList(long id, String aufgabentitel, String aufgabe, Date datum, boolean erledigt, String dringlichkeit) {
         this.id = id;
         this.aufgabentitel = aufgabentitel ;
         this.aufgabe = aufgabe;
@@ -20,11 +20,11 @@ public class ToDoList {
         this.dringlichkeit = dringlichkeit;
     }
 
-    public boolean isDringlichkeit() {
+    public String getDringlichkeit() {
         return dringlichkeit;
     }
 
-    public void setDringlichkeit(boolean dringlichkeit) {
+    public void setDringlichkeit(String dringlichkeit) {
         this.dringlichkeit = dringlichkeit;
     }
 

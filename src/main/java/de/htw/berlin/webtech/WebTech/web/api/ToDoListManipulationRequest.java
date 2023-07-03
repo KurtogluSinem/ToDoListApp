@@ -1,5 +1,7 @@
 package de.htw.berlin.webtech.WebTech.web.api;
 
+import jakarta.validation.constraints.Pattern;
+
 import java.util.Date;
 
 public class ToDoListManipulationRequest {
@@ -9,9 +11,9 @@ public class ToDoListManipulationRequest {
     private String aufgabe;
     private boolean erledigt;
     private Date datum;
-    private boolean dringlichkeit;
+    private String dringlichkeit;
 
-    public ToDoListManipulationRequest(long id, String aufgabentitel, String aufgabe, Date datum, boolean erledigt, boolean dringlichkeit) {
+    public ToDoListManipulationRequest(long id, String aufgabentitel, String aufgabe, Date datum, boolean erledigt, String dringlichkeit) {
         this.id = id;
         this.aufgabentitel = aufgabentitel;
         this.aufgabe = aufgabe;
@@ -19,7 +21,14 @@ public class ToDoListManipulationRequest {
         this.datum = datum;
         this.dringlichkeit = dringlichkeit;
     }
+    @Pattern(
+
+            regexp = "HOCH|MITTEL|NIEDRIG|UNKNOWN",
+            message = "Please provide 'HOCH', 'MITTEL', 'NIEDRIG', 'UNKNOWN' for Priorität")
+
+
     public ToDoListManipulationRequest(){}
+
 
     public long getId() {
         return id;
@@ -29,11 +38,11 @@ public class ToDoListManipulationRequest {
         this.id = id;
     }
 
-    public boolean isDringlichkeit() {
+    public String getDringlichkeit() {
         return dringlichkeit;
     }
 
-    public void setDringlichkeit(boolean dringlichkeit) {
+    public void setDringlichkeit(String dringlichkeit) {
         this.dringlichkeit = dringlichkeit;
     }
 

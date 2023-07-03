@@ -22,14 +22,15 @@ public class  ToDoListEntity {
     private Date datum;
 
     @Column(name = "dringlichkeit")
-    private boolean dringlichkeit;
+    @Enumerated(value = EnumType.STRING)
+    private Dringlichkeit dringlichkeit;
 
     @Column(name = "erledigt")
     private Boolean erledigt;
 
 
 
-    public ToDoListEntity(String aufgabentitel, String aufgabe, Boolean erledigt, Date datum, boolean dringlichkeit) {
+    public ToDoListEntity(String aufgabentitel, String aufgabe, Boolean erledigt, Date datum, Dringlichkeit dringlichkeit) {
         this.aufgabentitel = aufgabentitel;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
@@ -37,7 +38,7 @@ public class  ToDoListEntity {
         this.dringlichkeit = dringlichkeit;
     }
 
-    public void setDringlichkeit(boolean dringlichkeit) {
+    public void setDringlichkeit(Dringlichkeit dringlichkeit) {
         this.dringlichkeit = dringlichkeit;
     }
 
@@ -82,7 +83,7 @@ public class  ToDoListEntity {
         this.datum = datum;
     }
 
-    public boolean getDringlichkeit() {
+    public Dringlichkeit getDringlichkeit() {
         return dringlichkeit;
     }
 }

@@ -1,5 +1,6 @@
 package de.htw.berlin.webtech.WebTech.service;
 
+import de.htw.berlin.webtech.WebTech.persistence.Dringlichkeit;
 import de.htw.berlin.webtech.WebTech.persistence.ToDoListEntity;
 import de.htw.berlin.webtech.WebTech.persistence.ToDoListRepository;
 import de.htw.berlin.webtech.WebTech.web.api.ToDoList;
@@ -14,32 +15,35 @@ import java.util.stream.Collectors;
     public class ToDoListService {
 
         private final ToDoListRepository toDoListRepository;
+        private final ToDoListTransformer toDoListTransformer;
 
-        public ToDoListService(ToDoListRepository toDoListRepository) {
+        public ToDoListService(ToDoListRepository toDoListRepository,ToDoListTransformer toDoListTransformer) {
             this.toDoListRepository = toDoListRepository;
+            this.toDoListTransformer = toDoListTransformer;
         }
 
         public List<ToDoList> findAll() {
             List<ToDoListEntity> toDoLists = toDoListRepository.findAll();
             return toDoLists.stream()
-                    .map(this::transformEntity)
+                    .map(toDoListTransformer::transformEntity)
                     .collect(Collectors.toList());
 
         }
 
         public ToDoList findById(Long id){
             var toDoListEntity = toDoListRepository.findById(id);
-            return toDoListEntity.map(this::transformEntity).orElse(null);
+            return toDoListEntity.map(toDoListTransformer::transformEntity).orElse(null);
         }
 
         public ToDoList create(ToDoListManipulationRequest request) {
+            var dringlichkeit = Dringlichkeit.valueOf(request.getDringlichkeit());
             var toDoListEntity = new ToDoListEntity(request.getAufgabentitel(),
                     request.getAufgabe(),
                     request.isErledigt(),
                     request.getDatum(),
-                    request.isDringlichkeit());
+                    dringlichkeit);
             toDoListEntity = toDoListRepository.save(toDoListEntity);
-            return transformEntity(toDoListEntity);
+            return toDoListTransformer.transformEntity(toDoListEntity);
         }
 
         public ToDoList update(Long id, ToDoListManipulationRequest request){
@@ -53,13 +57,13 @@ import java.util.stream.Collectors;
             toDoListEntity.setAufgabe(request.getAufgabe());
             toDoListEntity.setErledigt(request.isErledigt());
             toDoListEntity.setDatum(request.getDatum());
-            toDoListEntity.setDringlichkeit(request.isDringlichkeit());
+            toDoListEntity.setDringlichkeit(Dringlichkeit.valueOf(request.getDringlichkeit()));
 
             toDoListEntity = toDoListRepository.save(toDoListEntity);
-            return transformEntity(toDoListEntity);
+            return toDoListTransformer.transformEntity(toDoListEntity);
         }
 
-        public ToDoList isFinished(Long id, ToDoListManipulationRequest request){
+        public ToDoList isDone(Long id, ToDoListManipulationRequest request){
             var toDoListEntityOptional = toDoListRepository.findById(id);
             if (toDoListEntityOptional.isEmpty()){
                 return null;
@@ -75,7 +79,7 @@ import java.util.stream.Collectors;
             }
 
             toDoListEntity = toDoListRepository.save(toDoListEntity);
-            return transformEntity(toDoListEntity);
+            return toDoListTransformer.transformEntity(toDoListEntity);
         }
 
 
@@ -94,13 +98,14 @@ import java.util.stream.Collectors;
 
 
         public ToDoList transformEntity(ToDoListEntity toDoListEntity) {
+            var dringlichkeit = toDoListEntity.getDringlichkeit() != null ? toDoListEntity.getDringlichkeit().name(): Dringlichkeit.UNKNOWN.name();
             return new ToDoList(
                                 toDoListEntity.getId(),
                                 toDoListEntity.getAufgabentitel(),
                                 toDoListEntity.getAufgabe(),
                                 toDoListEntity.getDatum(),
                                 toDoListEntity.getErledigt(),
-                                toDoListEntity.getDringlichkeit());
+                                dringlichkeit);
 
         }
 
