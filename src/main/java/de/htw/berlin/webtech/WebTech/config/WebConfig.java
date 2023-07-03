@@ -19,6 +19,7 @@ public class WebConfig implements WebMvcConfigurer{
                             "https://github.com/Fatmaguel-Tokcan/todolistapp-frontend/tree/gh-pages"
                     );
         }
+
 }
 
 

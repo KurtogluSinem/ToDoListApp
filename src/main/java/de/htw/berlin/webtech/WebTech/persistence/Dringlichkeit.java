@@ -7,4 +7,5 @@ public enum Dringlichkeit {
     MITTEL,
     NIEDRIG,
     UNKNOWN;
+
 }
