@@ -42,9 +42,13 @@ public class ToDoListRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ToDoList> updateToDoList(@PathVariable Long id, @Valid @RequestBody ToDoListManipulationRequest request) {
+    public ResponseEntity<ToDoList> updateToDoListe(@PathVariable Long id, @Valid @RequestBody ToDoListManipulationRequest request) {
         ToDoList toDoList = toDoListService.update(id, request);
-        return toDoList != null ? ResponseEntity.ok(toDoList) : ResponseEntity.notFound().build();
+        if (toDoList != null) {
+            return ResponseEntity.ok(toDoList);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/{id}/erledigt")

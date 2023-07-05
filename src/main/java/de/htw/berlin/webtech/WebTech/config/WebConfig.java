@@ -15,7 +15,7 @@ public class WebConfig implements WebMvcConfigurer{
             registry.addMapping("/api/**")
                     .allowedMethods("*")
                     .allowedOrigins(
-                            "http://localhost:3003",
+                            "http://localhost:3004",
                             "https://github.com/Fatmaguel-Tokcan/todolistapp-frontend/tree/gh-pages"
                     );
         }
