@@ -1,7 +1,5 @@
 package de.htw.berlin.webtech.WebTech.service;
-import de.htw.berlin.webtech.WebTech.persistence.Dringlichkeit;
-import de.htw.berlin.webtech.WebTech.persistence.ToDoListEntity;
-import de.htw.berlin.webtech.WebTech.persistence.ToDoListRepository;
+import de.htw.berlin.webtech.WebTech.persistence.*;
 import de.htw.berlin.webtech.WebTech.web.api.ToDoList;
 import de.htw.berlin.webtech.WebTech.web.api.ToDoListManipulationRequest;
 import org.jboss.logging.Logger;
@@ -13,7 +11,7 @@ import java.util.stream.Collectors;
 public class ToDoListService {
     private final ToDoListRepository toDoListRepository;
     private final ToDoListTransformer toDoListTransformer;
-    public ToDoListService(ToDoListRepository toDoListRepository,ToDoListTransformer toDoListTransformer) {
+    public ToDoListService(ToDoListRepository toDoListRepository, ToDoListTransformer toDoListTransformer) {
         this.toDoListRepository = toDoListRepository;
         this.toDoListTransformer = toDoListTransformer;
     }
@@ -74,6 +72,7 @@ public class ToDoListService {
             return null;
         }
     }
+
 
     private ToDoList transformEntity(ToDoListEntity toDoListEntity) {
         String dringlichkeit = toDoListEntity.getDringlichkeit() != null ? toDoListEntity.getDringlichkeit().name() : Dringlichkeit.UNKNOWN.name();

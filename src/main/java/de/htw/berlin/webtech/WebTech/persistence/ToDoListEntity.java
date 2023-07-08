@@ -30,13 +30,15 @@ public class  ToDoListEntity {
 
 
 
-    public ToDoListEntity(String aufgabentitel, String aufgabe, Boolean erledigt, Date datum, Dringlichkeit dringlichkeit) {
+
+    public ToDoListEntity(String aufgabentitel, String aufgabe, boolean erledigt, Date datum, Dringlichkeit dringlichkeit) {
         this.aufgabentitel = aufgabentitel;
         this.aufgabe = aufgabe;
         this.erledigt = erledigt;
         this.datum = datum;
         this.dringlichkeit = dringlichkeit;
     }
+
 
     public void setDringlichkeit(Dringlichkeit dringlichkeit) {
         this.dringlichkeit = dringlichkeit;
@@ -45,6 +47,7 @@ public class  ToDoListEntity {
     public ToDoListEntity() {
 
     }
+
 
     public long getId() {
         return id;
