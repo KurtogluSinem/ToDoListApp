@@ -89,6 +89,9 @@ public class  ToDoListEntity {
     public Dringlichkeit getDringlichkeit() {
         return dringlichkeit;
     }
-}
 
+    public void setId(long id) {
+        this.id = id;
+    }
+}
 

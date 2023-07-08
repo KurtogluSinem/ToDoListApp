@@ -5,12 +5,12 @@ import java.util.Date;
 public class ToDoList {
 
 
-        private long id;
-        private String aufgabentitel;
-        private String aufgabe;
-        private boolean erledigt;
-        private Date datum;
-        private String dringlichkeit;
+    private long id;
+    private String aufgabentitel;
+    private String aufgabe;
+    private boolean erledigt;
+    private Date datum;
+    private String dringlichkeit;
 
     public ToDoList(long id, String aufgabentitel, String aufgabe, Date datum, boolean erledigt, String dringlichkeit) {
         this.id = id;
@@ -68,5 +68,4 @@ public class ToDoList {
         this.datum = datum;
     }
 }
-
 
