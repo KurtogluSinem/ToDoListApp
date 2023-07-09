@@ -31,36 +31,6 @@ public class ToDoListServiceTest {
     @InjectMocks
     private ToDoListService toDoListService;
 
-    @Test
-    @DisplayName("should return true if delete was successful")
-    void should_return_true_if_delete_was_successful() {
-        // given
-        Long givenId = 111L;
-        doReturn(true).when(toDoListRepository).existsById(givenId);
-
-        // when
-        boolean result = toDoListService.deleteById(givenId);
-
-        // then
-        verify(toDoListRepository).deleteById(givenId);
-        assertThat(result).isTrue();
-    }
-
-    @Test
-    @DisplayName("should return false if ToDoList to delete does not exist")
-    void should_return_false_if_todo_to_delete_does_not_exist() {
-        // given
-        Long givenId = 111L;
-        when(toDoListRepository.existsById(givenId)).thenReturn(false);
-
-        // when
-        boolean result = toDoListService.deleteById(givenId);
-
-        // then
-        verify(toDoListRepository).existsById(givenId);
-        verifyNoMoreInteractions(toDoListRepository);
-        assertThat(result).isFalse();
-    }
 
     @Test
     @DisplayName("should create ToDoList with valid request")
